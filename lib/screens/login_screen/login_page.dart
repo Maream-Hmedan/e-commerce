@@ -126,15 +126,13 @@ class _LoginPageState extends State<LoginPage> {
                       textButton: "LOGIN",
                       context: MediaQuery.of(context),
                       onTap: () {
-                        // if (_key.currentState!.validate()) {
-                        //   AppNavigator.of(context, isAnimated: true)
-                        //       .push(const HomePage());
-                        //   login(
-                        //       email: _emailController.text,
-                        //       password: _passController.text);
-                        // }
-                        AppNavigator.of(context, isAnimated: true)
-                            .pushAndRemoveUntil(const AdminHomePage());
+                        if (_key.currentState!.validate()) {
+                          AppNavigator.of(context, isAnimated: true)
+                              .push(const HomePage());
+                          login(
+                              email: _emailController.text,
+                              password: _passController.text);
+                        }
                       },
                     ),
                   ],
@@ -192,7 +190,8 @@ class _LoginPageState extends State<LoginPage> {
           AppNavigator.of(context, isAnimated: true)
               .push(const HomePage());
         }else{
-
+          AppNavigator.of(context, isAnimated: true)
+              .push(const AdminHomePage());
         }
       } else {
         showDialog(
