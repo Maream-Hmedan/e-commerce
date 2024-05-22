@@ -127,8 +127,6 @@ class _LoginPageState extends State<LoginPage> {
                       context: MediaQuery.of(context),
                       onTap: () {
                         if (_key.currentState!.validate()) {
-                          AppNavigator.of(context, isAnimated: true)
-                              .push(const HomePage());
                           login(
                               email: _emailController.text,
                               password: _passController.text);
